@@ -1,7 +1,11 @@
-function Hero(props) {
+interface heroProps {
+    url: string
+}
+
+function Hero(props: heroProps) {
     return (
         <>
-            <section style={{backgroundImage: "`${props.url}`"}}>
+            <section style={{backgroundImage: `url(${props.url})`}}>
 
             </section>
         </>
