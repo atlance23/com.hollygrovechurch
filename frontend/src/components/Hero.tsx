@@ -5,7 +5,7 @@ interface heroProps {
 function Hero(props: heroProps) {
     return (
         <>
-            <section style={{backgroundImage: `url(${props.url})`}}>
+            <section className="heroSection" style={{backgroundImage: `url(${props.url})`}}>
 
             </section>
         </>
