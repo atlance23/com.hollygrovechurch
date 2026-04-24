@@ -6,7 +6,8 @@
   --text-primary-color: #333333;
   --text-secondary-color: #FFFFFF;
   --accent-color: #53b968;
-  --body-font: "Google Sans"
+  --body-font: "Google Sans";
+  --heading-font: "inter";
 }
 
 html, body {
@@ -44,4 +45,43 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+}
+
+#headerMainLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sliderContainer {
+  width: 100vw; /* The viewport width */
+  height: 80vh;
+  overflow: hidden; /* Hide the slides outside the view */
+  position: relative;
+}
+
+.sliderAnimation {
+  display: flex;
+  /* Duration relative to slide count for consistent speed */
+  animation: slideLeft calc(var(--slide-count) * 5s) linear infinite; 
+}
+
+.slide {
+  flex-shrink: 0; /* Prevent slides from squishing */
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the entire row left by (Total Slides - 1) * 100vw */
+    /* Or 100% if you are looping seamlessly */
+    transform: translateX(calc(-100vw * (var(--slide-count) - 1)));
+  }
 }

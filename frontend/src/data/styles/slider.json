@@ -1,0 +1,44 @@
+[
+    {
+        "slideId": 1,
+        "settings": {
+            "hasHeading": true,
+            "hasSubheading": true,
+            "ctaButton": true,
+            "isCentered": true,
+            "hasBackgroundImage": true
+        },
+        "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
+        "headingContent": "This is an example",
+        "subheadingContent": "This is more example text",
+        "ctaButtonText": "Read More"
+    },
+    {
+        "slideId": 2,
+        "settings": {
+            "hasHeading": true,
+            "hasSubheading": true,
+            "ctaButton": true,
+            "isCentered": true,
+            "hasBackgroundImage": true
+        },
+        "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
+        "headingContent": "This is an example",
+        "subheadingContent": "This is more example text",
+        "ctaButtonText": "Read More"
+    },
+    {
+        "slideId": 3,
+        "settings": {
+            "hasHeading": true,
+            "hasSubheading": true,
+            "ctaButton": true,
+            "isCentered": true,
+            "hasBackgroundImage": true
+        },
+        "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
+        "headingContent": "This is an example",
+        "subheadingContent": "This is more example text",
+        "ctaButtonText": "Read More"
+    }
+]
