@@ -2,7 +2,7 @@ export default function Header() {
     return (
         <>
             <header id="header">
-                <div id="headerTop">
+                <div id="headerTop" className="option">
 
                 </div>
                 <div id="headerMain">
@@ -13,10 +13,16 @@ export default function Header() {
 
                     </div>
                     <div id="headerMainRight" className="headerMainChild">
-                        <a href="#">Home</a>
+                        <nav>
+                            <ul style={{listStyle: 'none'}}>
+                                <li>
+                                    <a style={{textDecoration: 'none', color: 'var(--primary-text-color)'}} href="#">Home</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-                <div id="headerBottom">
+                <div id="headerBottom" className="option">
 
                 </div>
             </header>
