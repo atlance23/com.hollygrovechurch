@@ -9,7 +9,6 @@ export default function Slider({data}) {
     for (let i = 0; i <= slideCount; i++) {
         const startPause = (i * (pauseTime + moveTime) / totalTime) * 100;
         const endPause = ((i * (pauseTime + moveTime) + pauseTime) / totalTime) * 100;
-        const moveEnd = ((i + 1) * (pauseTime + moveTime) / totalTime) * 100;
         
         const distance = i === slideCount ? 0 : -(i * 100);
         
@@ -55,30 +54,56 @@ function mapSlidesObj(dataObj) {
         <>
             {dataObj.map(({
                 slideId,
-                hasHeading,
-                hasSubheading,
-                ctaButton,
-                isCentered,
-                hasBackgroundImage,
+                settings: { hasHeading, hasSubheading, ctaButton }, // Corrected nesting
                 imageUri,
                 headingContent,
-                subheadingContent
+                subheadingContent,
+                ctaButtonText
             }) => (
                 <div 
-                key={slideId}
-                style={{
-                    backgroundImage: `url(${imageUri})`,
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }} 
-                className="slide"
+                    key={slideId}
+                    style={{ 
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUri})`,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }} 
+                    className="slide"
                 >
-                    <h2 style={{
-                        color: "var(--text-secondary-color)",
-                        fontFamily: "var(--heading-font)",
-                        }}>{hasHeading ? headingContent : ""}</h2>
+                    {/* Heading Logic */}
+                    {hasHeading && headingContent && (
+                        <h2 style={{ 
+                            color: "var(--text-secondary-color)",
+                            marginBottom: "0px" 
+                        }}>
+                            {headingContent}
+                        </h2>
+                    )}
+                    {/* Subheading Logic */}
+                    {hasSubheading && subheadingContent && (
+                        <h3 style={{ color: "var(--text-secondary-color)" }} className="subheading">
+                            {subheadingContent}
+                        </h3>
+                    )}
+
+                    {/* CTA Button Logic */}
+                    {ctaButton && ctaButtonText && (
+                        <button 
+                        style={{ 
+                            color: "var(--text-secondary-color)",
+                            backgroundColor: "var(--accent-color)",
+                            padding: "10px 16px",
+                            minWidth: "175px",
+                            border: "none",
+                            borderRadius: "50px",
+                            textTransform: "uppercase"
+                        }} 
+                        className="ctaBtn"
+                        >
+                            {ctaButtonText}
+                        </button>
+                    )}
                 </div>
             ))}
         </>
