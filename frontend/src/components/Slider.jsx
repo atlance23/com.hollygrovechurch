@@ -1,6 +1,6 @@
 export default function Slider({data}) {
     const slideCount = data.length;
-    const pauseTime = 2; // seconds
+    const pauseTime = 2.5; // seconds
     const moveTime = 1;  // seconds
     const totalTime = (pauseTime + moveTime) * slideCount;
 

@@ -9,9 +9,9 @@
             "hasBackgroundImage": true
         },
         "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
-        "headingContent": "This is an example",
-        "subheadingContent": "This is more example text",
-        "ctaButtonText": "Read More"
+        "headingContent": "Welcome to Holly Grove Church",
+        "subheadingContent": "Real Church. Real People. Real Faith.",
+        "ctaButtonText": "Learn More"
     },
     {
         "slideId": 2,
@@ -22,9 +22,9 @@
             "isCentered": true,
             "hasBackgroundImage": true
         },
-        "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
-        "headingContent": "This is an example",
-        "subheadingContent": "This is more example text",
+        "imageUri": "https://images.pexels.com/photos/1642770/pexels-photo-1642770.jpeg",
+        "headingContent": "Sermons are Sunday's @ 8:30 and 11:00",
+        "subheadingContent": "Visit our FAQ Page to learn more!",
         "ctaButtonText": "Read More"
     },
     {
@@ -36,9 +36,9 @@
             "isCentered": true,
             "hasBackgroundImage": true
         },
-        "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg",
-        "headingContent": "This is an example",
-        "subheadingContent": "This is more example text",
+        "imageUri": "https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg",
+        "headingContent": "Wednesday Night Live",
+        "subheadingContent": "Wednesday Nights starting at 6pm!",
         "ctaButtonText": "Read More"
     }
 ]
