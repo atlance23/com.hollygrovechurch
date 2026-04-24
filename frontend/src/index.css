@@ -68,11 +68,34 @@ html, body {
 }
 
 .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0; /* Prevent slides from squishing */
   width: 100vw;
   height: 80vh;
   background-size: cover;
   background-position: center;
+}
+
+.slideHeading {
+  color: var(--text-secondary-color);
+  margin-bottom: 0px;
+}
+
+.slideSubHeading {
+  color: var(--text-secondary-color);
+}
+
+.slideCtaBtn {
+  color: var(--text-secondary-color);
+  background: var(--accent-color);
+  padding: 10px 16px;
+  min-width: 175px;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
 }
 
 @keyframes slideLeft {

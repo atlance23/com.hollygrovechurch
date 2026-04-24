@@ -62,27 +62,18 @@ function mapSlidesObj(dataObj) {
             }) => (
                 <div 
                     key={slideId}
-                    style={{ 
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUri})`,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center"
-                    }} 
+                    style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUri})`}} 
                     className="slide"
                 >
                     {/* Heading Logic */}
                     {hasHeading && headingContent && (
-                        <h2 style={{ 
-                            color: "var(--text-secondary-color)",
-                            marginBottom: "0px" 
-                        }}>
+                        <h2 className="slideHeading">
                             {headingContent}
                         </h2>
                     )}
                     {/* Subheading Logic */}
                     {hasSubheading && subheadingContent && (
-                        <h3 style={{ color: "var(--text-secondary-color)" }} className="subheading">
+                        <h3 className="slideSubHeading">
                             {subheadingContent}
                         </h3>
                     )}
@@ -91,15 +82,9 @@ function mapSlidesObj(dataObj) {
                     {ctaButton && ctaButtonText && (
                         <button 
                         style={{ 
-                            color: "var(--text-secondary-color)",
-                            backgroundColor: "var(--accent-color)",
-                            padding: "10px 16px",
-                            minWidth: "175px",
-                            border: "none",
-                            borderRadius: "50px",
-                            textTransform: "uppercase"
+                            
                         }} 
-                        className="ctaBtn"
+                        className="slideCtaBtn"
                         >
                             {ctaButtonText}
                         </button>
