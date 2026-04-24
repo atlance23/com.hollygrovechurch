@@ -1,11 +1,29 @@
-.heroSection {
-    margin-top: 70px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    padding: 20px 60px;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --primary-color: #FFFFFF;
+  --secondary-color: #000000;
+  --text-primary-color: #333333;
+  --text-secondary-color: #FFFFFF;
+  --accent-color: #53b968;
+  --body-font: "Google Sans"
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--body-font);
+}
+
+#header {
+  background-color: var(--primary-color);
+  color: var(--text-primary-color);
+  min-height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
