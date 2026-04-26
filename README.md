@@ -1,4 +1,4 @@
-# Holly Grove Vhurch
+# Holly Grove Church
 Website For Holly Grove Church
 
 ## Toolkit
