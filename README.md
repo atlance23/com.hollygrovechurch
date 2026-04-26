@@ -5,10 +5,10 @@ Website For Holly Grove Church
 React.js
 
 ## TODO:
-- [IN PROGRESS]: Lexer.js
+- [IN PROGRESS]: Lexer
 - [NOT STARTED]: Clean up
-- [NOT STARTED]: Compiler.js
-- [NOT STARTED]: Schema.js
+- [NOT STARTED]: Compiler
+- [NOT STARTED]: Schema
 - ...
 
 ## Goals:
