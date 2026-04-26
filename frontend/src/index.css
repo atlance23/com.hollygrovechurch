@@ -108,3 +108,39 @@ html, body {
     transform: translateX(calc(-100vw * (var(--slide-count) - 1)));
   }
 }
+
+/**
+* @Description: [Utility Classes]
+*/
+
+.w-full {
+  width: 100vw;
+}
+
+.h-full {
+  height: 100vh;
+} 
+
+.flex {
+  display: flex;
+} 
+
+.column {
+  flex-direction: column;
+} 
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.display {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+}
+
+.heroSubheading {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+}

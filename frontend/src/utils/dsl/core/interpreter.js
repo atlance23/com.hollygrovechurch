@@ -1,19 +1,31 @@
-/**
- * Resolve expressions like:
- * - "slide.headingContent"
- * - "data.length"
- */
-function resolvePath(path, scope) {
+export function resolvePath(path, scope) {
   return path.split(".").reduce((acc, key) => acc?.[key], scope);
 }
 
-/**
- * Replace {{ }} bindings inside strings
- */
-function interpolate(str, scope) {
+export function interpolate(str, scope) {
   if (typeof str !== "string") return str;
 
-  return str.replace(/{{(.*?)}}/g, (_, expr) => {
-    return resolvePath(expr.trim(), scope) ?? "";
-  });
+  try {
+    return str.replace(/{{(.*?)}}/g, (_, expr) => {
+      try {
+        if (!scope) return "";
+
+        const trimmed = expr?.trim?.();
+        if (!trimmed) return "";
+
+        const value = resolvePath(trimmed, scope);
+
+        // explicit undefined/null safety
+        if (value === undefined || value === null) return "";
+
+        return value;
+      } catch (err) {
+        console.warn("Interpolation error in expression:", expr, err);
+        return "";
+      }
+    });
+  } catch (err) {
+    console.error("Fatal interpolate error:", err, { str, scope });
+    return "";
+  }
 }

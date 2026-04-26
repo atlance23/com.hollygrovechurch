@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["version", "component"],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "component": {
+      "type": "object",
+      "required": ["name", "tree"],
+      "properties": {
+        "name": { "type": "string" },
+
+        "props": {
+          "type": "object",
+          "additionalProperties": true
+        },
+
+        "computed": {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              { "type": "string" },
+              { "type": "number" }
+            ]
+          }
+        },
+
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": { "type": "string" },
+              "target": { "type": "string" }
+            }
+          }
+        },
+
+        "tree": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/node" }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "node": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "type": "string" },
+        "props": { "type": "object" },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/node" }
+        },
+
+        "value": { "type": "string" },
+
+        "source": { "type": "string" },
+        "itemName": { "type": "string" },
+
+        "if": {
+          "type": "object",
+          "properties": {
+            "and": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "or": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "not": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

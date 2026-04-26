@@ -1,0 +1,45 @@
+[
+    {
+        "componentMeta": {
+            "name": "frontpageHero",
+            "elementTag": "div",
+            "id": "hero",
+            "classes": "w-full h-full flex column center",
+            "styles": {
+                "imageUri": "https://images.pexels.com/photos/2171277/pexels-photo-2171277.jpeg"
+            },
+            "children": true
+        },
+        "settings": {
+
+        },
+        "childComponents": [
+            {
+                "componentMeta": {
+                    "name": "heading",
+                    "elementTag": "h2",
+                    "id": "primaryHeading",
+                    "classes": "display",
+                    "styles": null
+                },
+                "settings": {
+                    
+                },
+                "content": "Welcome to Holly Grove Church"
+            },
+            {
+                "componentMeta": {
+                    "name": "subheading",
+                    "elementTag": "p",
+                    "id": "heroSubheading",
+                    "classes": "subheading",
+                    "styles": null
+                },
+                "settings": {
+                    
+                },
+                "content": "Where Christ Changes Hearts and Lives!"
+            }
+        ]
+    }
+]

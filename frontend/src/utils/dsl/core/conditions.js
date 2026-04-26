@@ -1,7 +1,7 @@
 /**
  * Evaluate structured conditionals
  */
-function evaluateCondition(cond, scope) {
+export function evaluateCondition(cond, scope) {
   if (!cond) return true;
 
   if (cond.and) {

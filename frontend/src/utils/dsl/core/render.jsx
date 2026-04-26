@@ -1,9 +1,27 @@
-function renderNode(node, scope) {
+import React from "react";
+import { resolvePath, interpolate } from "./interpreter";
+import { resolveProps } from "./props.js";
+import { evaluateCondition } from "./conditions.js";
+import * as interpreter from "./interpreter.js";
+
+console.log("INTERPRETER MODULE:", interpreter);
+
+export function renderNode(node, scope) {
   if (!node) return null;
+
+  console.log("interpolate type:", typeof interpolate);
 
   switch (node.type) {
     case "TEXT":
-      return interpolate(node.value, scope);
+      return (
+        <>
+          {
+            <React.Fragment>
+              {interpolate(node.value, scope)}
+            </React.Fragment>
+          }
+        </>
+      );
 
     case "FRAGMENT":
       return (

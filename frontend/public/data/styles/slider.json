@@ -1,6 +1,6 @@
 [
     {
-        "slideId": 1,
+        "id": 1,
         "settings": {
             "hasHeading": true,
             "hasSubheading": true,
@@ -14,7 +14,7 @@
         "ctaButtonText": "Learn More"
     },
     {
-        "slideId": 2,
+        "id": 2,
         "settings": {
             "hasHeading": true,
             "hasSubheading": true,
@@ -28,7 +28,7 @@
         "ctaButtonText": "Read More"
     },
     {
-        "slideId": 3,
+        "id": 3,
         "settings": {
             "hasHeading": true,
             "hasSubheading": true,

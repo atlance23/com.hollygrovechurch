@@ -1,7 +1,7 @@
 /**
  * Resolve props (including styles)
  */
-function resolveProps(props = {}, scope) {
+export function resolveProps(props = {}, scope) {
   const resolved = {};
 
   for (let key in props) {

@@ -1,0 +1,155 @@
+{
+  "version": "1.0",
+  "component": {
+    "name": "Slider",
+    "props": {
+      "data": { "type": "array", "required": true }
+    },
+
+    "computed": {
+      "slideCount": "data.length",
+      "pauseTime": 2.5,
+      "moveTime": 1,
+      "totalTime": "(pauseTime + moveTime) * slideCount"
+    },
+
+    "effects": [
+      {
+        "type": "generateKeyframes",
+        "target": "keyframes"
+      }
+    ],
+
+    "tree": [
+      {
+        "type": "FRAGMENT",
+        "children": [
+          {
+            "type": "style",
+            "children": [
+              {
+                "type": "TEXT",
+                "value": "@keyframes dynamicSlide { {{keyframes}} } .sliderAnimation { display: flex; animation: dynamicSlide {{totalTime}}s infinite; }"
+              }
+            ]
+          },
+
+          {
+            "type": "div",
+            "props": {
+              "className": "sliderContainer",
+              "style": {
+                "--slide-count": "{{slideCount}}",
+                "display": "flex",
+                "width": "calc({{slideCount}} * 100vw)"
+              }
+            },
+            "children": [
+              {
+                "type": "div",
+                "props": {
+                  "className": "sliderAnimation"
+                },
+                "children": [
+                  {
+                    "type": "LOOP",
+                    "source": "data",
+                    "itemName": "slide",
+                    "key": "slide.slideId",
+                    "children": [
+                      {
+                        "type": "div",
+                        "props": {
+                          "className": "slide",
+                          "style": {
+                            "backgroundImage": "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url({{slide.imageUri}})"
+                          }
+                        },
+                        "children": [
+
+                          {
+                            "type": "CONDITIONAL",
+                            "if": {
+                              "and": [
+                                "slide.settings.hasHeading",
+                                "slide.headingContent"
+                              ]
+                            },
+                            "children": [
+                              {
+                                "type": "h2",
+                                "props": {
+                                  "className": "slideHeading"
+                                },
+                                "children": [
+                                  {
+                                    "type": "TEXT",
+                                    "value": "{{slide.headingContent}}"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+
+                          {
+                            "type": "CONDITIONAL",
+                            "if": {
+                              "and": [
+                                "slide.settings.hasSubheading",
+                                "slide.subheadingContent"
+                              ]
+                            },
+                            "children": [
+                              {
+                                "type": "h3",
+                                "props": {
+                                  "className": "slideSubHeading"
+                                },
+                                "children": [
+                                  {
+                                    "type": "TEXT",
+                                    "value": "{{slide.subheadingContent}}"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+
+                          {
+                            "type": "CONDITIONAL",
+                            "if": {
+                              "and": [
+                                "slide.settings.ctaButton",
+                                "slide.ctaButtonText"
+                              ]
+                            },
+                            "children": [
+                              {
+                                "type": "button",
+                                "props": {
+                                  "className": "slideCtaBtn",
+                                  "style": {}
+                                },
+                                "children": [
+                                  {
+                                    "type": "TEXT",
+                                    "value": "{{slide.ctaButtonText}}"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
